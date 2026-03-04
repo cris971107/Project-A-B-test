@@ -19,10 +19,11 @@ Analyzed the performance of a new recommendation engine through an A/B test to d
 1. [Project Overview](#1-project-overview)
 2. [Objectives](#2-objectives)
 3. [Repository Structure](#3-repository-structure)
-4. [Analysis & Metrics](#4-analysis--metrics)
+4. [Data Processing & Methodology](#4-analysis--metrics)
 5. [Key Insights](#5-key-insights)
 6. [Deliverables](#6-deliverables)
-7. [Author](#7-author)
+7. [Final Verdict & Recommendations](#8-Final_recomendations)
+8. [Author](#7-author)
 
 ---
 
@@ -53,28 +54,24 @@ Clean and process raw interaction data to ensure metrics such as total event sum
 │
 ├── notebooks/                # Jupyter, R Markdown, or Colab notebooks
 │
-├── scripts/                  # Reusable .py, .R, or .sh processing files
-│
-├── reports/                  # Final outputs: PDFs, slide decks, Word docs
-│
 ├── visuals/                  # Exported charts, dashboard screenshots, ERD diagrams
 │
 └── docs/                     # Data dictionaries, schema notes, reference material
 
 ```
 
-## 4. Analysis & Metrics
 
 
-### Analytical Approach
+---
 
-### Key Metrics Defined
 
-| Metric | Plain-Language Definition | Why It Matters |
-|--------|--------------------------|----------------|
-| `Conversion Rate (CR)` | The percentage of users who move from one stage of the funnel to the next.] | [Measures the specific impact of the recommender system on shopping behavior. |
-| `14-Day Retention Conversion` | Conversion metrics calculated only using events within 14 days of a user's signup.] | [Ensures the "Expected Outcome" defined in the technical specs is measured accurately. |
-| `Statistical Significance (p-value)` | The probability that the difference between groups happened by chance.] | [Validates whether the "improvement" (or decline) is real or just noise. |
+## 4. Data Processing & Methodology
+
+The analysis utilized a refined dataset, referred to in the code as res_clean, which aggregated user interactions.
+
+Metric Definition: The core metrics focused on the total sum of events (sum) and the frequency of interactions (count) per unique user.
+
+Refinement Logic: Data was processed to eliminate outliers and ensure that only relevant events within the experimental window were included in the final z-test.
 
 ### Methods Used
 
@@ -84,18 +81,7 @@ Funnel analysis (Login -> Product Page -> Cart -> Purchase).
 
 Z-test for independent proportions (Alpha = 0.05).
 
----
-
-
-## 4.  Data Processing & Methodology
-
-The analysis utilized a refined dataset, referred to in the code as res_clean, which aggregated user interactions.
-
-Metric Definition: The core metrics focused on the total sum of events (sum) and the frequency of interactions (count) per unique user.
-
-Refinement Logic: Data was processed to eliminate outliers and ensure that only relevant events within the experimental window were included in the final z-test.
-
-`/path/to/file`
+`visuals/Captura de pantalla 2026-03-04 000520.png`
 
 
 ## 5. Key Insights
@@ -124,23 +110,23 @@ Performance Degradation: The new system did not just fail to improve metrics; it
 
 Statistical Confidence: The p-value decreased slightly during the final stages of analysis. In statistical terms, a lower p-value strengthens the rejection of the null hypothesis, confirming that the negative impact observed was not a random fluke but a consistent result of the new system.
 
-`/path/to/file`
+`visuals/Captura de pantalla 2026-03-03 234335.png`
 
 
 ## 6. Deliverables
 
 | Deliverable | Description | Location |
 |-------------|-------------|----------|
-| Code | Jupyter Notebook containing EDA, Funnel Visualizations, and Z-test results. | `/path/to/file` |
+| Code | Jupyter Notebook containing EDA, Funnel Visualizations, and Z-test results. | `notebooks/Sprint-15S-2.ipynb` |
 
 
-## 5. Final Verdict & Recommendations
+## 7. Final Verdict & Recommendations
 
 Result: The A/B test is considered a failure in terms of optimization.
 
 Action: It is strongly recommended not to deploy the new recommendation system. Further investigation is needed to understand why the algorithm interfered with the purchase process.
 
-## 7. Author
+## 8. Author
 
 **Cristian Barrientos**
 Your role or title - current or target
