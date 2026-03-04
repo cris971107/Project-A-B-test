@@ -71,7 +71,7 @@ Metric Definition: The core metrics focused on the total sum of events (sum) and
 
 Refinement Logic: Data was processed to eliminate outliers and ensure that only relevant events within the experimental window were included in the final z-test.
 
-### Methods Used
+# Methods Used
 
 Descriptive statistics for event distribution per user.
 
