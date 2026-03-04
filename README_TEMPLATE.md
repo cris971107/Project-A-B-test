@@ -62,7 +62,6 @@ Clean and process raw interaction data to ensure metrics such as total event sum
 
 ---
 
-
 ## 4. Data Processing & Methodology
 
 The analysis utilized a refined dataset, referred to in the code as res_clean, which aggregated user interactions.
@@ -82,7 +81,6 @@ Z-test for independent proportions (Alpha = 0.05).
 visuals/Captura de pantalla 2026-03-04 000520.png
 
 ---
-
 
 ## 5. Key Insights
 
@@ -112,9 +110,7 @@ Statistical Confidence: The p-value decreased slightly during the final stages o
 
 `visuals/Captura de pantalla 2026-03-03 234335.png`
 
-
 ---
-
 
 ## 6. Deliverables
 
@@ -122,9 +118,7 @@ Statistical Confidence: The p-value decreased slightly during the final stages o
 |-------------|-------------|----------|
 | Code | Jupyter Notebook containing EDA, Funnel Visualizations, and Z-test results. | `notebooks/Sprint-15S-2.ipynb` |
 
-
 ---
-
 
 ## 7. Final Verdict & Recommendations
 
@@ -132,9 +126,7 @@ Result: The A/B test is considered a failure in terms of optimization.
 
 Action: It is strongly recommended not to deploy the new recommendation system. Further investigation is needed to understand why the algorithm interfered with the purchase process.
 
-
 ---
-
 
 ## 8. Author
 
