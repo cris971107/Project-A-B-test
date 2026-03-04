@@ -133,7 +133,12 @@ Statistical Confidence: The p-value decreased slightly during the final stages o
 |-------------|-------------|----------|
 | Code | Jupyter Notebook containing EDA, Funnel Visualizations, and Z-test results. | `/path/to/file` |
 
----
+
+## 5. Final Verdict & Recommendations
+
+Result: The A/B test is considered a failure in terms of optimization.
+
+Action: It is strongly recommended not to deploy the new recommendation system. Further investigation is needed to understand why the algorithm interfered with the purchase process.
 
 ## 7. Author
 
