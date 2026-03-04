@@ -28,20 +28,20 @@ Analyzed the performance of a new recommendation engine through an A/B test to d
 
 ## 1. Project Overview
 
-An international online store tested a new recommendation system to see if it could increase conversions by 10% at each stage of the funnel within 14 days of signup. The original analysis was never completed, so it was unclear whether the test met its goal. I filtered the data to EU users in the correct time frame, removed overlapping users, and ran a Z-test for proportions. The results showed that the new system performed worse than the control group at each stage and did not meet the expected lift.
+This report summarizes the statistical evaluation of an A/B test conducted to measure the impact of a new recommendation system on user behavior. By leveraging detailed event logs and user data, the analysis identifies whether the proposed changes successfully optimized the purchasing funnel or adversely affected the user experience.
 
 ---
 
 ## 2. Objectives
 
 Primary Objective:
-Determine whether the new recommender system (Group B) achieved a statistically significant 10% increase in conversion rates at the product page, cart, and purchase stages within 14 days of user signup.
+Compare the conversion rates and activity levels of the control group (System A) against the test group (System B).
 
 Secondary Objective 1:
-Validate the integrity of the A/B test by identifying and removing overlapping users between groups and confirming that only EU users within the defined test period (December 2020–January 2021) are included.
+Utilize hypothesis testing (z-tests) to determine if observed differences are statistically significant or merely due to random chance.
 
 Secondary Objective 2:
-Quantify the conversion rates and drop-off percentages at each stage of the funnel—login → product page → cart → purchase—for both control and treatment groups.
+Clean and process raw interaction data to ensure metrics such as total event sums and counts are accurate for final evaluation.
 
 ## 3. Repository Structure
 
@@ -86,6 +86,16 @@ Z-test for independent proportions (Alpha = 0.05).
 
 ---
 
+
+## 4.  Data Processing & Methodology
+
+The analysis utilized a refined dataset, referred to in the code as res_clean, which aggregated user interactions.
+
+Metric Definition: The core metrics focused on the total sum of events (sum) and the frequency of interactions (count) per unique user.
+
+Refinement Logic: Data was processed to eliminate outliers and ensure that only relevant events within the experimental window were included in the final z-test.
+
+
 ## 5. Key Insights
 
 <!--
@@ -106,17 +116,13 @@ Z-test for independent proportions (Alpha = 0.05).
   Aim for 3–6 insights. Quality over quantity.
 -->
 
-**Insight 1: Test Integrity Failure**
-A significant number of users were found to be participating in two tests simultaneously. Additionally, the test was conducted during the "Christmas Calendar" marketing event, which likely skewed purchase behavior across both groups.
+The evaluation revealed critical findings regarding the new recommendation system:
 
-**Insight 2: [Negative Conversion Impact**
-Contrary to the 10% increase goal, Group B showed a lower conversion rate than Group A at the very first step (Product Page). Group A converted at ~65% while Group B converted at only ~56%.
+Negative Performance Impact: The evidence indicates that the new recommendation system actually worsened either the user experience or the overall purchase process.
 
-**Insight 3: Funnel Bottleneck**
-The largest drop-off in both groups occurs between the login and product_page stages. The new system failed to entice users to even look at products at the same rate as the old system.
+Increased Statistical Confidence: As the data cleaning process progressed, the calculated p-value decreased slightly. This lower p-value provides even stronger statistical evidence that the decline in performance was a direct result of the new system rather than a random fluctuation.
 
-**Insight 4: Statistical Rejection**
-The Z-test resulted in p-values significantly lower than 0.05 for the product_page and purchase stages, confirming that the decrease in performance in Group B was statistically significant.
+`/path/to/file`
 
 
 ## 6. Deliverables
@@ -124,7 +130,6 @@ The Z-test resulted in p-values significantly lower than 0.05 for the product_pa
 | Deliverable | Description | Location |
 |-------------|-------------|----------|
 | Code | Jupyter Notebook containing EDA, Funnel Visualizations, and Z-test results. | `/path/to/file` |
-| Visualizations | images where we can find the results | [`/path/to/file` |
 
 ---
 
